@@ -62,7 +62,9 @@ addGlPoints = function(map,
   stopifnot(inherits(sf::st_geometry(data), c("sfc_POINT", "sfc_MULTIPOINT")))
 
   # data
-  data = sf::st_transform(data, 4326)
+  # Don't transform if using CRS.Simple
+  # if (map$x$options$crs$crsClass != 'L.CRS.Simple')
+  #   data = sf::st_transform(data, 4326)
   crds = sf::st_coordinates(data)[, c(2, 1)]
 
   # color

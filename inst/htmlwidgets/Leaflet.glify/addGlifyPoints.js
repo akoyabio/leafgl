@@ -34,7 +34,10 @@ LeafletWidget.methods.addGlifyPoints = function(data, cols, popup, opacity, size
       color: clrs,
       opacity: opacity,
       size: size,
-      className: group
+      className: group,
+      fragmentShaderSource: function fragmentShaderSource() {
+        return L.glify.shader.fragment.point_no_border;
+      }
     });
 
   map.layerManager.addLayer(pointslayer.glLayer, null, null, group);
