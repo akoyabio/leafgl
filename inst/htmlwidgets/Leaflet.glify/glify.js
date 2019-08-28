@@ -21210,9 +21210,8 @@ Lines.prototype = {
 
         allVertices.push(vertices[vertexIndex], vertices[vertexIndex + 1], vertices[vertexIndex + 2], vertices[vertexIndex + 3], vertices[vertexIndex + 4]);
       }
+    }
 
-      allVertices = allVertices.concat(verticesDuplicated);
-    });
     this.verts = allVertices;
     var vertArray = new Float32Array(allVertices);
     size = vertArray.BYTES_PER_ELEMENT;
